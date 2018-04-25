@@ -1,12 +1,17 @@
 
-def search_movie_ids(lines, in_str, substr):
+def search_movie_ids(title_array, in_str, substr):
 	"""
 	Get all movie IDs containing the substring.
 	"""
-	for line in in_str.strip().split('\n'):
+	lines = in_str.splitlines()
+	for i in range(len(lines)-1):
+		line = lines[i]
+		next_line = lines[i+1]
 		if substr in line:
-			lines.append(line[47:54])
-	return lines
+			title = next_line[1:-4]
+			title_array.append(title)
+			print(title)
+	return title_array
 
 def gather_top_movies(substr, dest_file_top):
     lines = []
@@ -47,4 +52,5 @@ def copy_movie_IDs_to(substr, dest_file_top, dest_file_bottom):
     gather_bottom_movies(substr, dest_file_bottom)
 
 
-copy_movie_IDs_to('<span class="rating-cancel "><a href="/title/tt', "./movie_ids_top_250.txt", "./movie_ids_bottom_250.txt")
+#copy_movie_IDs_to('<span class="rating-cancel "><a href="/title/tt', "./movie_ids_top_250.txt", "./movie_ids_bottom_250.txt")
+copy_movie_IDs_to('?ref_=adv_li_tt', "./movie_titles_top_250.txt", "./movie_titles_bottom_250.txt")
