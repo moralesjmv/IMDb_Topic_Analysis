@@ -25,8 +25,8 @@ bottom_titles = []
 top_summaries = []
 bottom_summaries = []
 setup_data_arrays(top_titles, bottom_titles, top_summaries, bottom_summaries)
-#print(top_titles)
-#print(top_summaries)
+print(top_titles)
+print(top_summaries[0:5])
 
 #TODO: LDA and K clustering following this guide
 #http://brandonrose.org/clustering#Latent-Dirichlet-Allocation

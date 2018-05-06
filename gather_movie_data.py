@@ -11,16 +11,16 @@ def store_movie_data(dest):
     ia = imdb.IMDb()
     summaries = []
     n = 0
-    for line in bottom_movies.strip().split('\n'):
+    for line in top_movies.strip().split('\n'):
         print("Progress: " + str(n) + "%")
         n += 1
         movie = ia.get_movie(line)
-        summaries.append(str(movie['plot']))
-        #print(movie['plot'])
+        summaries.append(str(movie['year']))
+        #print(movie['year'])
     joined_lines = '\n'.join(summaries)
     open(dest,'w').write(joined_lines)
 
 top_summaries = []
 bottom_summaries = []
-store_movie_data("./movie_summaries_bottom_250.txt")
+store_movie_data("./movie_years_top_250.txt")
 #load_data_into_array(top_summaries, bottom_summaries)
