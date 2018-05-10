@@ -1,0 +1,568 @@
+
+
+<style>
+
+text.mpld3-text, div.mpld3-tooltip {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+g.mpld3-xaxis, g.mpld3-yaxis {
+display: none; }
+
+svg.mpld3-figure {
+margin-left: -200px;}
+
+text.mpld3-text, div.mpld3-tooltip {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+g.mpld3-xaxis, g.mpld3-yaxis {
+display: none; }
+
+svg.mpld3-figure {
+margin-left: -200px;}
+
+text.mpld3-text, div.mpld3-tooltip {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+g.mpld3-xaxis, g.mpld3-yaxis {
+display: none; }
+
+svg.mpld3-figure {
+margin-left: -200px;}
+
+</style>
+
+<div id="fig_el1014430573191379129551488370"></div>
+<script>
+function mpld3_load_lib(url, callback){
+  var s = document.createElement('script');
+  s.src = url;
+  s.async = true;
+  s.onreadystatechange = s.onload = callback;
+  s.onerror = function(){console.warn("failed to load library " + url);};
+  document.getElementsByTagName("head")[0].appendChild(s);
+}
+
+if(typeof(mpld3) !== "undefined" && mpld3._mpld3IsLoaded){
+   // already loaded: just create the figure
+   !function(mpld3){
+       
+    mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+    HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+    HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+    HtmlTooltipPlugin.prototype.defaultProps = {labels:null,
+                                                hoffset:0,
+                                                voffset:10};
+    function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    HtmlTooltipPlugin.prototype.draw = function(){
+       var obj = mpld3.get_element(this.props.id);
+       var labels = this.props.labels;
+       var tooltip = d3.select("body").append("div")
+                    .attr("class", "mpld3-tooltip")
+                    .style("position", "absolute")
+                    .style("z-index", "10")
+                    .style("visibility", "hidden");
+
+       obj.elements()
+           .on("mouseover", function(d, i){
+                              tooltip.html(labels[i])
+                                     .style("visibility", "visible");})
+           .on("mousemove", function(d, i){
+                  tooltip
+                    .style("top", d3.event.pageY + this.props.voffset + "px")
+                    .style("left",d3.event.pageX + this.props.hoffset + "px");
+                 }.bind(this))
+           .on("mouseout",  function(d, i){
+                           tooltip.style("visibility", "hidden");});
+    };
+    
+    mpld3.register_plugin("toptoolbar", TopToolbar);
+    TopToolbar.prototype = Object.create(mpld3.Plugin.prototype);
+    TopToolbar.prototype.constructor = TopToolbar;
+    function TopToolbar(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    TopToolbar.prototype.draw = function(){
+      // the toolbar svg doesn't exist
+      // yet, so first draw it
+      this.fig.toolbar.draw();
+
+      // then change the y position to be
+      // at the top of the figure
+      this.fig.toolbar.toolbar.attr("x", 150);
+      this.fig.toolbar.toolbar.attr("y", 400);
+
+      // then remove the draw function,
+      // so that it is not called again
+      this.fig.toolbar.draw = function() {}
+    }
+    
+    mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+    HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+    HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+    HtmlTooltipPlugin.prototype.defaultProps = {labels:null,
+                                                hoffset:0,
+                                                voffset:10};
+    function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    HtmlTooltipPlugin.prototype.draw = function(){
+       var obj = mpld3.get_element(this.props.id);
+       var labels = this.props.labels;
+       var tooltip = d3.select("body").append("div")
+                    .attr("class", "mpld3-tooltip")
+                    .style("position", "absolute")
+                    .style("z-index", "10")
+                    .style("visibility", "hidden");
+
+       obj.elements()
+           .on("mouseover", function(d, i){
+                              tooltip.html(labels[i])
+                                     .style("visibility", "visible");})
+           .on("mousemove", function(d, i){
+                  tooltip
+                    .style("top", d3.event.pageY + this.props.voffset + "px")
+                    .style("left",d3.event.pageX + this.props.hoffset + "px");
+                 }.bind(this))
+           .on("mouseout",  function(d, i){
+                           tooltip.style("visibility", "hidden");});
+    };
+    
+    mpld3.register_plugin("toptoolbar", TopToolbar);
+    TopToolbar.prototype = Object.create(mpld3.Plugin.prototype);
+    TopToolbar.prototype.constructor = TopToolbar;
+    function TopToolbar(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    TopToolbar.prototype.draw = function(){
+      // the toolbar svg doesn't exist
+      // yet, so first draw it
+      this.fig.toolbar.draw();
+
+      // then change the y position to be
+      // at the top of the figure
+      this.fig.toolbar.toolbar.attr("x", 150);
+      this.fig.toolbar.toolbar.attr("y", 400);
+
+      // then remove the draw function,
+      // so that it is not called again
+      this.fig.toolbar.draw = function() {}
+    }
+    
+    mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+    HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+    HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+    HtmlTooltipPlugin.prototype.defaultProps = {labels:null,
+                                                hoffset:0,
+                                                voffset:10};
+    function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    HtmlTooltipPlugin.prototype.draw = function(){
+       var obj = mpld3.get_element(this.props.id);
+       var labels = this.props.labels;
+       var tooltip = d3.select("body").append("div")
+                    .attr("class", "mpld3-tooltip")
+                    .style("position", "absolute")
+                    .style("z-index", "10")
+                    .style("visibility", "hidden");
+
+       obj.elements()
+           .on("mouseover", function(d, i){
+                              tooltip.html(labels[i])
+                                     .style("visibility", "visible");})
+           .on("mousemove", function(d, i){
+                  tooltip
+                    .style("top", d3.event.pageY + this.props.voffset + "px")
+                    .style("left",d3.event.pageX + this.props.hoffset + "px");
+                 }.bind(this))
+           .on("mouseout",  function(d, i){
+                           tooltip.style("visibility", "hidden");});
+    };
+    
+    mpld3.register_plugin("toptoolbar", TopToolbar);
+    TopToolbar.prototype = Object.create(mpld3.Plugin.prototype);
+    TopToolbar.prototype.constructor = TopToolbar;
+    function TopToolbar(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    TopToolbar.prototype.draw = function(){
+      // the toolbar svg doesn't exist
+      // yet, so first draw it
+      this.fig.toolbar.draw();
+
+      // then change the y position to be
+      // at the top of the figure
+      this.fig.toolbar.toolbar.attr("x", 150);
+      this.fig.toolbar.toolbar.attr("y", 400);
+
+      // then remove the draw function,
+      // so that it is not called again
+      this.fig.toolbar.draw = function() {}
+    }
+    
+       mpld3.draw_figure("fig_el1014430573191379129551488370", {"width": 1008.0, "height": 432.0, "axes": [{"bbox": [0.125, 0.125, 0.775, 0.755], "xlim": [-0.7823001139722829, 0.7716323367906675], "ylim": [-0.849607131818674, 0.7690440609001151], "xdomain": [-0.7823001139722829, 0.7716323367906675], "ydomain": [-0.849607131818674, 0.7690440609001151], "xscale": "linear", "yscale": "linear", "axes": [{"position": "bottom", "nticks": 0, "tickvalues": [], "tickformat": "", "scale": "linear", "fontsize": null, "grid": {"gridOn": false}, "visible": false}, {"position": "left", "nticks": 0, "tickvalues": [], "tickformat": "", "scale": "linear", "fontsize": null, "grid": {"gridOn": false}, "visible": false}], "axesbg": "#FFFFFF", "axesbgalpha": null, "zoomable": true, "id": "el101443057418392184", "lines": [], "paths": [{"data": "data05", "xindex": 0, "yindex": 1, "coordinates": "axes", "pathcodes": ["M", "L", "S", "L", "S", "L", "S", "L", "S", "Z"], "id": "el101443057332301104", "dasharray": "none", "alpha": 0.8, "facecolor": "#FFFFFF", "edgecolor": "#CCCCCC", "edgewidth": 1.0, "zorder": 1000000.0}], "markers": [{"data": "data01", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el101443057332929088pts", "facecolor": "#1B9E77", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 2, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data02", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el101443055928188544pts", "facecolor": "#D95F02", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 2, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data03", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el101443057332301272pts", "facecolor": "#7570B3", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 2, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data04", "xindex": 0, "yindex": 1, "coordinates": "axes", "id": "el101443057529836040pts", "facecolor": "#1B9E77", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 1000002.0, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data04", "xindex": 0, "yindex": 2, "coordinates": "axes", "id": "el101443057333994608pts", "facecolor": "#D95F02", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 1000002.0, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data04", "xindex": 0, "yindex": 3, "coordinates": "axes", "id": "el101443057529838560pts", "facecolor": "#7570B3", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 1000002.0, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}], "texts": [{"text": "war, humans, world", "position": [0.8609511008704559, 0.9478783419180772], "coordinates": "axes", "h_anchor": "start", "v_baseline": "auto", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 1000003.0, "id": "el101443057333997464"}, {"text": "murder, wife, police", "position": [0.8609511008704559, 0.901888643610498], "coordinates": "axes", "h_anchor": "start", "v_baseline": "auto", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 1000003.0, "id": "el101443057529837048"}, {"text": "life, friends, family", "position": [0.8609511008704559, 0.8558989453029189], "coordinates": "axes", "h_anchor": "start", "v_baseline": "auto", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 1000003.0, "id": "el101443057529838056"}], "collections": [], "images": [], "sharex": [], "sharey": []}], "data": {"data01": [[-0.311108365927303, 0.3555187576061868], [-0.5914865716098634, 0.1385511117646962], [-0.6178420337493936, -0.1971477510091187], [-0.571246888917026, 0.46756226082499386], [-0.5188334895054384, -0.28933726579547664], [-0.4558968084821345, 0.1724257460599513], [-0.6253833274124567, 0.11426554771014927], [-0.4875753970700444, -0.43146200579210414], [-0.45915981141841666, 0.3162512924181886], [-0.5345280263445213, -0.03448502804663671], [-0.2489944741510287, 0.6230064762860295], [0.2948913176758857, -0.4605532211144852], [-0.4999633758227514, 0.16421468481946044], [-0.5728008963448096, -0.4738778788693827], [-0.679308839790906, 0.2834652830877193], [-0.5896804115447709, 0.3985368821185311], [-0.5845970966254849, -0.3181053151751355], [-0.582421220637886, -0.16112184902639817], [-0.3020248587132722, 0.23836297820050867], [-0.40862033909041096, -0.14844168949369024], [-0.4635519946901929, 0.4915688219413927], [0.20080326699934278, 0.6582542661137715], [-0.32044668778937657, 0.1560811524939616], [-0.5260081755225425, 0.31896803069077684], [-0.522139262972577, -0.19853612960136655], [-0.6620647108117742, -0.2756736657681252], [-0.24740056388652143, -0.2778275552765745], [-0.37861814461326887, 0.17321960187460916], [-0.5886445349400931, 0.3647714661230235], [-0.46844375549657274, -0.35007210973842146], [-0.6766548027088335, 0.006524113037980912], [-0.5646958818414959, 0.07945798118438446], [-0.132281263684373, 0.5971800333415126], [-0.09707372384018248, -0.6553182785978395], [-0.5847115618742105, -0.23357063973622844], [-0.4662406147496264, 0.017610436090235212], [-0.6832837515813383, -0.19982145436911766], [-0.08093240859552699, 0.08921226083400934], [-0.37303317626593835, -0.2613330730342411], [-0.28016382507591514, -0.33993305034556376], [-0.4163055347021442, -0.3472396419215392], [-0.45542905472626366, 0.352592845084796], [-0.6394627729441276, -0.07229493989974131], [-0.6075151777364647, -0.3481411894094403], [-0.3510107438988955, 0.400652527248105], [-0.7007436528058821, -0.182044493454725], [-0.1986582599675444, -0.49728105939325656], [-0.08095903416516892, -0.8037962490058781], [-0.5136843972770234, -0.10990186112797501], [-0.12242000353868211, 0.7232331780873192], [0.11755133472569944, -0.6480193460769791], [-0.43304347678858046, -0.053748024452214896], [-0.5303680661524053, -0.3647362007503101], [-0.7008096861315433, 0.2525152772280063], [0.6144850850314945, -0.19169455736436888], [-0.6356190893362695, 0.23110078188823957], [-0.5617489435682929, 0.19055413818027336], [-0.3450665171224377, -0.5709654110812014], [-0.7383208936676712, 0.12695693520611437], [-0.31925513456931154, -0.09792668566308325], [0.13248750832631725, -0.5767208350279723], [-0.6030126251654321, -0.08750527171841406], [-0.13921598539613828, -0.26632406372245576], [-0.40854434977239334, 0.08297349389149859], [-0.6043073793174866, 0.30970190306535583], [-0.5286698393884313, 0.37867872260157176]], "data02": [[-0.6537245689382807, -0.002461102490244795], [-0.1941760574234527, 0.027659485029171944], [-0.3515390065715282, -0.3678377612543948], [0.13624692246602108, 0.674792478824929], [0.016066110750381356, 0.6870576766010891], [-0.07056481327717157, 0.5260129697458258], [-0.23071085737897382, 0.44630129712211114], [-0.7229106104295686, 0.11474230848922667], [-0.22673024659758237, 0.5828755483396111], [-0.11899966361144078, -0.04017295985363452], [-0.24222138512506222, 0.6677459099367615], [0.1800320577093273, 0.40265606978611995], [0.6294058390389103, -0.3601150665216822], [-0.11077171258629849, 0.3416907207558228], [0.4639535118159331, 0.3620606114395808], [0.13045627326199494, -0.43476616039603033], [-0.12270210475000448, -0.3920573178056023], [0.03308453148296907, 0.5613986750820023], [0.08444787831112147, 0.7028858441031745], [0.46700557396108544, 0.39693016816335996], [-0.02936740563818377, 0.6520919204394517], [-0.604541476120448, 0.0654054551074679], [-0.3229331215766018, 0.6175015476227409], [0.02638064772986, 0.5239167000745235], [-0.10863984335229883, -0.45152820363622376], [0.05985364921720446, -0.5633191035385583], [0.6406137829777395, 0.4132871979289975], [-0.1832601961812146, 0.20951781298954705], [0.2752087222168113, 0.46192509780103963], [0.1074019697670972, 0.6224263381115568], [0.3194965275816657, -0.2998009506023565], [0.7276531164860557, -0.0820226181843672], [0.21289057242504367, 0.6741637192737113], [-0.43507884072541, -0.5532911030550246], [0.6570585485944359, 0.23037246045567353], [0.5797444191055694, 0.05292974496358034], [0.15840032765111678, 0.6383664178905559], [0.08451974909112726, -0.570912023224527], [0.11265935481491086, 0.4072612189486295], [-0.008315643934161565, -0.7046344453425473], [-0.287075280591097, -0.6160490515133901], [0.3235283333853176, -0.517066023461018], [0.27700148826340065, 0.5678033793380416], [0.5044445899669963, 0.12521368862645899], [-0.22137833578244426, -0.4607061130092797], [-0.18663746733683814, 0.28359625391936016], [0.22647995434271212, 0.46703280021916505], [-0.03708829452799086, -0.5995857146254947], [-0.2662038367358288, -0.5608822281705189], [0.46486538381359355, 0.5579112448938882], [0.06093903041873105, -0.6848108902328177], [0.4049110733039674, 0.3436561731063374], [0.5263669845496148, 0.4663128692154488], [-0.38206205704040264, 0.5717012864850368], [0.5251279307489655, -0.0031045893960970337], [0.00847192575720885, 0.6237453130132867], [0.13517147521665826, 0.5188704927187314], [0.08665487575981146, 0.3635524561611177], [-0.11654769306564605, 0.41609856830558223]], "data03": [[0.43561294362270286, -0.42622203720090546], [0.302683443522418, 0.3231678978500281], [-0.3601268364495356, 0.48686094694568327], [0.0930714731088605, -0.0135324757180519], [-0.24642415513645435, -0.026998237097103254], [-0.0072532607246351775, 0.3257613856394769], [-0.3702819995588843, -0.30546025238676333], [0.39648277452354874, 0.22204886093413523], [0.36741245347475043, 0.07449699330832034], [0.376004409663208, -0.40708889473879245], [-0.1623309277909849, -0.1986443475837897], [0.348453187792045, -0.028573218406763672], [0.6449967397435089, -0.029151264572962104], [0.5707139166032127, 0.2914176092494979], [0.2429221874191626, 0.20336639813285792], [0.4554338408173914, -0.29257940135214566], [0.01608839621842432, 0.4126545242427058], [0.15919087280404648, -0.28278121376138693], [0.22447166671256524, -0.13862176721987943], [0.5015148425021271, -0.4941716773298186], [-0.30053993115915856, 0.04655399200908736], [-0.44476199579786385, -0.482821222117087], [0.5609391210616081, -0.27395760959504406], [0.2927230857482988, 0.06846442536258365], [0.009121560065749757, -0.03574414068154368], [0.7076167331048148, 0.15804835641255988], [0.4184057789660876, -0.3478951851046789], [-0.25461124311955846, 0.48777013473815034], [0.43644139767657575, -0.06158194020657133], [0.5247607187226678, -0.31232120584653633], [-0.32576858831366956, -0.5215342559095942], [-0.17480165592734445, 0.03743982213101337], [0.31418608305327994, 0.636097238045646], [0.05456332120338336, -0.07886445386923051], [0.1664932521744032, 0.2323336567701002], [0.0594582141036297, -0.5163925823126523], [0.30399267563777954, -0.1993341393809047], [0.32564239855999805, -0.23430910860646872], [0.5568343194582541, -0.19587109971844552], [-0.11840439731512942, 0.22079654289936973], [-0.322049656945219, 0.5587857158757145], [0.1517041642694869, -0.06707134366299679], [-0.3917736518444805, 0.3778823551697903], [0.4309126479807576, 0.0592568235262007], [0.19284978938564212, 0.48480966884077004], [0.07899654903670819, -0.7249786394534489], [0.4482852084300742, -0.18377162733625815], [0.015207886907493966, -0.25991105457015584], [0.5069870820651401, -0.12866927092967836], [0.6698873348961378, 0.10415934121053533], [0.3228896506443525, -0.127070049402344], [0.6612645601763139, 0.06889660756730272], [0.3199993497107582, -0.6498578354506627], [-0.0582454297996491, -0.08719422140797875], [0.634604657024271, 0.19338620982236687], [0.07379097889606752, -0.3416922016885522], [0.6305413903350028, 0.2570690774870777], [-0.19965435288326175, 0.2712277646651572], [-0.4324728489147029, 0.6025267959585737], [0.4120006706527862, 0.12055355125655114], [-0.0205449638487205, 0.14686966380847233], [0.17337612219032877, -0.34532055823726104], [-0.05483950085289387, -0.49862916041030836], [0.5553336477513169, -0.4069195152801631], [0.4274189978636454, 0.26341598941481353], [0.652406699195761, -0.10060515195548426], [0.3094636569289276, 0.5183681415935474], [-0.04687980191783493, 0.461708309864195], [0.7011359887447336, 0.37145038961244636], [0.5139206594052576, 0.4029033449601497], [0.6521575427826362, -0.26813904650298587], [0.34287849407035254, 0.45502381752855786], [-0.06820488287192741, -0.7513715474644518], [0.5898237236734264, -0.2259418962630081], [-0.2997391742314309, 0.7070768488176712], [0.2804332488159988, -0.3392578002933499], [0.27373960397011715, -0.39469732932547125], [-0.15683913630147692, 0.47360398063606757], [-0.20208942199249985, -0.6810392936481978], [0.45220099837354766, 0.4898032577256701], [0.1549906735349249, 0.13971513028634516], [0.23330517189615133, -0.5317686116671857], [0.12834533301907075, -0.13838748864793557], [0.23333390175914634, 0.25231508046035034], [-0.2464228000535697, -0.1288754635840718], [0.40980083950702995, -0.5271257118962174], [0.05801875118096011, -0.40643632830952653], [0.414032648676084, 0.5615891430226881], [-0.08825214820044888, -0.0019435122024923286], [0.3017942949109153, -0.08292053041595566], [0.021232528312397386, 0.07977219760206822], [0.1567069556863092, 0.031903488381262654], [0.037557473427884326, 0.23715735767436488], [0.1784561101787797, -0.2303798418278317], [0.561974165773996, 0.24715966755652916], [-0.18083102792521677, -0.3906965162534536], [0.057417819792931084, -0.24808771670258778], [-0.3444202485991031, -0.6620915185863032], [0.2969698926965767, -0.5786265527993438], [0.3818141750927363, -0.5793796246068912], [0.38321953202028375, -0.2953952881578916], [-0.0670437508023446, -0.16460693758689818], [-0.04204737587954856, -0.4296201693230541], [-0.40954575452686515, -0.5058867540393412], [-0.7258351017849141, -0.05264533083273849], [-0.3501929727789142, -0.23872862735841385], [0.23450812912536076, -0.4462047104484081], [0.34589690574052684, -0.5973862115073618], [0.6717553242969805, 0.03808267288886664], [0.3378248891631469, 0.2572255726449864], [0.6146519519273449, -0.15648964489583442], [-0.05161050230004354, -0.3400940907300813], [-0.13667920075233783, -0.6343566482061808], [0.4648886122424526, 0.1746272546262916], [-0.1475809771525249, 0.7218554465488574], [0.21754028387185043, 0.031142858121951937], [0.24447765089914394, -0.6376532874336955], [0.2254987256029029, 0.15586061164922907], [0.4170996704312716, -0.002613235095284559], [0.5768030645186389, -0.3439778723747201], [0.35390889221809285, -0.4820214678182252], [0.5796922679470521, 0.06984155981585198], [0.5509445640515805, -0.08177727845521886], [-0.16638633941191738, -0.562755652310454], [0.4100322689136991, 0.49785972582218163]], "data04": [[0.8379096262160779, 0.958609271523179, 0.9126195732155998, 0.8666298749080207]], "data05": [[0.8225486431131593, 0.8375030659798872], [0.9910394265232977, 0.8375030659798872], [0.9935995903737841, 0.8375030659798872], [0.9935995903737841, 0.8436350257542311], [0.9935995903737841, 0.9785381407897964], [0.9935995903737841, 0.9846701005641403], [0.9910394265232977, 0.9846701005641403], [0.8225486431131593, 0.9846701005641403], [0.8199884792626729, 0.9846701005641403], [0.8199884792626729, 0.9785381407897964], [0.8199884792626729, 0.8436350257542311], [0.8199884792626729, 0.8375030659798872], [0.8225486431131593, 0.8375030659798872]]}, "id": "el101443057319137912", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}, {"type": "htmltooltip", "id": "el101443057332929088pts", "labels": ["The Dark Knight\n", "The Lord of the Rings: The Return of the King\n", "Schindler's List\n", "The Lord of the Rings: The Fellowship of the Ring\n", "Star Wars: Episode V - The Empire Strikes Back\n", "The Matrix\n", "The Lord of the Rings: The Two Towers\n", "Seven Samurai\n", "Interstellar\n", "Star Wars: Episode IV - A New Hope\n", "Saving Private Ryan\n", "Gladiator\n", "Raiders of the Lost Ark\n", "Alien\n", "Apocalypse Now\n", "Terminator 2\n", "The Pianist\n", "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb\n", "Casablanca\n", "The Great Dictator\n", "The Dark Knight Rises\n", "Aliens\n", "WALL\u00c2\u00b7E\n", "Princess Mononoke\n", "Das Boot\n", "Paths of Glory\n", "Scarface\n", "Inglourious Basterds\n", "2001: A Space Odyssey\n", "Full Metal Jacket\n", "Lawrence of Arabia\n", "Star Wars: Episode VI - Return of the Jedi\n", "Indiana Jones and the Last Crusade\n", "Monty Python and the Holy Grail\n", "Judgment at Nuremberg\n", "Hacksaw Ridge\n", "Blade Runner\n", "Pan's Labyrinth\n", "Gone with the Wind\n", "V for Vendetta\n", "The Deer Hunter\n", "Downfall\n", "The Bridge on the River Kwai\n", "The Great Escape\n", "The Elephant Man\n", "Come and See\n", "PK\n", "The Passion of Joan of Arc\n", "The General\n", "Blade Runner 2049\n", "Logan\n", "Mad Max: Fury Road\n", "Jurassic Park\n", "Harry Potter and the Deathly Hallows: Part 2\n", "Monsters, Inc.\n", "The Thing\n", "Platoon\n", "Stalker\n", "Akira\n", "Gandhi\n", "Hotel Rwanda\n", "Nausica\u00c3\u00a4 of the Valley of the Wind\n", "The Best Years of Our Lives\n", "The Battle of Algiers\n", "The Terminator\n", "Twelve Monkeys\n"], "hoffset": 10, "voffset": 10}, {"type": "toptoolbar"}, {"type": "htmltooltip", "id": "el101443055928188544pts", "labels": ["The Shawshank Redemption\n", "Pulp Fiction\n", "The Good, the Bad and the Ugly\n", "12 Angry Men\n", "Se7en\n", "The Silence of the Lambs\n", "The Usual Suspects\n", "The Green Mile\n", "The Departed\n", "The Prestige\n", "American History X\n", "Memento\n", "The Intouchables\n", "Once Upon a Time in the West\n", "Rear Window\n", "Django Unchained\n", "Oldboy\n", "North by Northwest\n", "M\n", "Witness for the Prosecution\n", "L.A. Confidential\n", "A Clockwork Orange\n", "Reservoir Dogs\n", "Amadeus\n", "Some Like It Hot\n", "Vertigo\n", "For a Few Dollars More\n", "The Sting\n", "Double Indemnity\n", "Rashomon\n", "Bicycle Thieves\n", "Yojimbo\n", "Three Billboards Outside Ebbing, Missouri\n", "Die Hard\n", "The Secret in Their Eyes\n", "Chinatown\n", "On the Waterfront\n", "The Third Man\n", "Dial M for Murder\n", "A Wednesday\n", "The Wages of Fear\n", "Sunrise\n", "Gone Girl\n", "Prisoners\n", "No Country for Old Men\n", "Kill Bill: Vol. 1\n", "Fargo\n", "Spotlight\n", "The Big Lebowski\n", "The Sixth Sense\n", "Shutter Island\n", "Wild Tales\n", "Memories of Murder\n", "Infernal Affairs\n", "La Haine\n", "The Maltese Falcon\n", "Touch of Evil\n", "Diabolique\n", "Jaws\n"], "hoffset": 10, "voffset": 10}, {"type": "toptoolbar"}, {"type": "htmltooltip", "id": "el101443057332301272pts", "labels": ["The Godfather\n", "The Godfather: Part II\n", "Inception\n", "Forrest Gump\n", "Fight Club\n", "Goodfellas\n", "One Flew Over the Cuckoo's Nest\n", "L\u00c3\u00a9on: The Professional\n", "Spirited Away\n", "Life Is Beautiful\n", "City of God\n", "It's a Wonderful Life\n", "City Lights\n", "Coco\n", "The Lion King\n", "Back to the Future\n", "Whiplash\n", "Psycho\n", "Sunset Boulevard\n", "Dangal\n", "Grave of the Fireflies\n", "The Lives of Others\n", "Cinema Paradiso\n", "Like Stars on Earth\n", "Modern Times\n", "My Father and My Son\n", "The Shining\n", "Braveheart\n", "American Beauty\n", "Your Name\n", "Once Upon a Time in America\n", "Citizen Kane\n", "3 Idiots\n", "The Bandit\n", "Toy Story\n", "Requiem for a Dream\n", "Taxi Driver\n", "Eternal Sunshine of the Spotless Mind\n", "Up\n", "Batman Begins\n", "Snatch\n", "Good Will Hunting\n", "Toy Story 3\n", "Am\u00c3\u00a9lie\n", "To Kill a Mockingbird\n", "The Hunt\n", "Singin' in the Rain\n", "Metropolis\n", "A Separation\n", "The Apartment\n", "All About Eve\n", "Children of Heaven\n", "The Treasure of the Sierra Madre\n", "Rang De Basanti\n", "The Kid\n", "Ikiru\n", "Sherlock Jr.\n", "Heat\n", "The Wolf of Wall Street\n", "Inside Out\n", "Room\n", "Casino\n", "A Beautiful Mind\n", "Trainspotting\n", "Warrior\n", "Howl's Moving Castle\n", "Unforgiven\n", "Lock, Stock and Two Smoking Barrels\n", "My Neighbor Totoro\n", "Incendies\n", "Raging Bull\n", "The Seventh Seal\n", "Ran\n", "Rebecca\n", "Andrei Rublev\n", "Wild Strawberries\n", "Tokyo Story\n", "Mr. Smith Goes to Washington\n", "Gangs of Wasseypur\n", "The Gold Rush\n", "The Princess Bride\n", "La La Land\n", "The Grand Budapest Hotel\n", "Stand by Me\n", "Donnie Darko\n", "Finding Nemo\n", "There Will Be Blood\n", "Catch Me If You Can\n", "Into the Wild\n", "The Help\n", "12 Years a Slave\n", "The Truman Show\n", "How to Train Your Dragon\n", "Ben-Hur\n", "Dead Poets Society\n", "Gran Torino\n", "Rocky\n", "Rush\n", "Million Dollar Baby\n", "Before Sunrise\n", "Hachi: A Dog's Tale\n", "Barry Lyndon\n", "Network\n", "Butch Cassidy and the Sundance Kid\n", "Cool Hand Luke\n", "Life of Brian\n", "In the Mood for Love\n", "Before Sunset\n", "In the Name of the Father\n", "Paris, Texas\n", "8\u00c2\u00bd\n", "Amores Perros\n", "Persona\n", "Mary and Max\n", "Three Colors: Red\n", "Paper Moon\n", "The Grapes of Wrath\n", "The 400 Blows\n", "It Happened One Night\n", "The Nights of Cabiria\n", "The Wizard of Oz\n", "Beauty and the Beast\n", "The Bourne Ultimatum\n", "Groundhog Day\n", "Annie Hall"], "hoffset": 10, "voffset": 10}, {"type": "toptoolbar"}]});
+   }(mpld3);
+}else if(typeof define === "function" && define.amd){
+   // require.js is available: use it to load d3/mpld3
+   require.config({paths: {d3: "https://mpld3.github.io/js/d3.v3.min"}});
+   require(["d3"], function(d3){
+      window.d3 = d3;
+      mpld3_load_lib("https://mpld3.github.io/js/mpld3.v0.3.js", function(){
+         
+    mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+    HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+    HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+    HtmlTooltipPlugin.prototype.defaultProps = {labels:null,
+                                                hoffset:0,
+                                                voffset:10};
+    function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    HtmlTooltipPlugin.prototype.draw = function(){
+       var obj = mpld3.get_element(this.props.id);
+       var labels = this.props.labels;
+       var tooltip = d3.select("body").append("div")
+                    .attr("class", "mpld3-tooltip")
+                    .style("position", "absolute")
+                    .style("z-index", "10")
+                    .style("visibility", "hidden");
+
+       obj.elements()
+           .on("mouseover", function(d, i){
+                              tooltip.html(labels[i])
+                                     .style("visibility", "visible");})
+           .on("mousemove", function(d, i){
+                  tooltip
+                    .style("top", d3.event.pageY + this.props.voffset + "px")
+                    .style("left",d3.event.pageX + this.props.hoffset + "px");
+                 }.bind(this))
+           .on("mouseout",  function(d, i){
+                           tooltip.style("visibility", "hidden");});
+    };
+    
+    mpld3.register_plugin("toptoolbar", TopToolbar);
+    TopToolbar.prototype = Object.create(mpld3.Plugin.prototype);
+    TopToolbar.prototype.constructor = TopToolbar;
+    function TopToolbar(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    TopToolbar.prototype.draw = function(){
+      // the toolbar svg doesn't exist
+      // yet, so first draw it
+      this.fig.toolbar.draw();
+
+      // then change the y position to be
+      // at the top of the figure
+      this.fig.toolbar.toolbar.attr("x", 150);
+      this.fig.toolbar.toolbar.attr("y", 400);
+
+      // then remove the draw function,
+      // so that it is not called again
+      this.fig.toolbar.draw = function() {}
+    }
+    
+    mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+    HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+    HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+    HtmlTooltipPlugin.prototype.defaultProps = {labels:null,
+                                                hoffset:0,
+                                                voffset:10};
+    function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    HtmlTooltipPlugin.prototype.draw = function(){
+       var obj = mpld3.get_element(this.props.id);
+       var labels = this.props.labels;
+       var tooltip = d3.select("body").append("div")
+                    .attr("class", "mpld3-tooltip")
+                    .style("position", "absolute")
+                    .style("z-index", "10")
+                    .style("visibility", "hidden");
+
+       obj.elements()
+           .on("mouseover", function(d, i){
+                              tooltip.html(labels[i])
+                                     .style("visibility", "visible");})
+           .on("mousemove", function(d, i){
+                  tooltip
+                    .style("top", d3.event.pageY + this.props.voffset + "px")
+                    .style("left",d3.event.pageX + this.props.hoffset + "px");
+                 }.bind(this))
+           .on("mouseout",  function(d, i){
+                           tooltip.style("visibility", "hidden");});
+    };
+    
+    mpld3.register_plugin("toptoolbar", TopToolbar);
+    TopToolbar.prototype = Object.create(mpld3.Plugin.prototype);
+    TopToolbar.prototype.constructor = TopToolbar;
+    function TopToolbar(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    TopToolbar.prototype.draw = function(){
+      // the toolbar svg doesn't exist
+      // yet, so first draw it
+      this.fig.toolbar.draw();
+
+      // then change the y position to be
+      // at the top of the figure
+      this.fig.toolbar.toolbar.attr("x", 150);
+      this.fig.toolbar.toolbar.attr("y", 400);
+
+      // then remove the draw function,
+      // so that it is not called again
+      this.fig.toolbar.draw = function() {}
+    }
+    
+    mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+    HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+    HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+    HtmlTooltipPlugin.prototype.defaultProps = {labels:null,
+                                                hoffset:0,
+                                                voffset:10};
+    function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    HtmlTooltipPlugin.prototype.draw = function(){
+       var obj = mpld3.get_element(this.props.id);
+       var labels = this.props.labels;
+       var tooltip = d3.select("body").append("div")
+                    .attr("class", "mpld3-tooltip")
+                    .style("position", "absolute")
+                    .style("z-index", "10")
+                    .style("visibility", "hidden");
+
+       obj.elements()
+           .on("mouseover", function(d, i){
+                              tooltip.html(labels[i])
+                                     .style("visibility", "visible");})
+           .on("mousemove", function(d, i){
+                  tooltip
+                    .style("top", d3.event.pageY + this.props.voffset + "px")
+                    .style("left",d3.event.pageX + this.props.hoffset + "px");
+                 }.bind(this))
+           .on("mouseout",  function(d, i){
+                           tooltip.style("visibility", "hidden");});
+    };
+    
+    mpld3.register_plugin("toptoolbar", TopToolbar);
+    TopToolbar.prototype = Object.create(mpld3.Plugin.prototype);
+    TopToolbar.prototype.constructor = TopToolbar;
+    function TopToolbar(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    TopToolbar.prototype.draw = function(){
+      // the toolbar svg doesn't exist
+      // yet, so first draw it
+      this.fig.toolbar.draw();
+
+      // then change the y position to be
+      // at the top of the figure
+      this.fig.toolbar.toolbar.attr("x", 150);
+      this.fig.toolbar.toolbar.attr("y", 400);
+
+      // then remove the draw function,
+      // so that it is not called again
+      this.fig.toolbar.draw = function() {}
+    }
+    
+         mpld3.draw_figure("fig_el1014430573191379129551488370", {"width": 1008.0, "height": 432.0, "axes": [{"bbox": [0.125, 0.125, 0.775, 0.755], "xlim": [-0.7823001139722829, 0.7716323367906675], "ylim": [-0.849607131818674, 0.7690440609001151], "xdomain": [-0.7823001139722829, 0.7716323367906675], "ydomain": [-0.849607131818674, 0.7690440609001151], "xscale": "linear", "yscale": "linear", "axes": [{"position": "bottom", "nticks": 0, "tickvalues": [], "tickformat": "", "scale": "linear", "fontsize": null, "grid": {"gridOn": false}, "visible": false}, {"position": "left", "nticks": 0, "tickvalues": [], "tickformat": "", "scale": "linear", "fontsize": null, "grid": {"gridOn": false}, "visible": false}], "axesbg": "#FFFFFF", "axesbgalpha": null, "zoomable": true, "id": "el101443057418392184", "lines": [], "paths": [{"data": "data05", "xindex": 0, "yindex": 1, "coordinates": "axes", "pathcodes": ["M", "L", "S", "L", "S", "L", "S", "L", "S", "Z"], "id": "el101443057332301104", "dasharray": "none", "alpha": 0.8, "facecolor": "#FFFFFF", "edgecolor": "#CCCCCC", "edgewidth": 1.0, "zorder": 1000000.0}], "markers": [{"data": "data01", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el101443057332929088pts", "facecolor": "#1B9E77", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 2, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data02", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el101443055928188544pts", "facecolor": "#D95F02", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 2, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data03", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el101443057332301272pts", "facecolor": "#7570B3", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 2, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data04", "xindex": 0, "yindex": 1, "coordinates": "axes", "id": "el101443057529836040pts", "facecolor": "#1B9E77", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 1000002.0, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data04", "xindex": 0, "yindex": 2, "coordinates": "axes", "id": "el101443057333994608pts", "facecolor": "#D95F02", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 1000002.0, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data04", "xindex": 0, "yindex": 3, "coordinates": "axes", "id": "el101443057529838560pts", "facecolor": "#7570B3", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 1000002.0, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}], "texts": [{"text": "war, humans, world", "position": [0.8609511008704559, 0.9478783419180772], "coordinates": "axes", "h_anchor": "start", "v_baseline": "auto", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 1000003.0, "id": "el101443057333997464"}, {"text": "murder, wife, police", "position": [0.8609511008704559, 0.901888643610498], "coordinates": "axes", "h_anchor": "start", "v_baseline": "auto", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 1000003.0, "id": "el101443057529837048"}, {"text": "life, friends, family", "position": [0.8609511008704559, 0.8558989453029189], "coordinates": "axes", "h_anchor": "start", "v_baseline": "auto", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 1000003.0, "id": "el101443057529838056"}], "collections": [], "images": [], "sharex": [], "sharey": []}], "data": {"data01": [[-0.311108365927303, 0.3555187576061868], [-0.5914865716098634, 0.1385511117646962], [-0.6178420337493936, -0.1971477510091187], [-0.571246888917026, 0.46756226082499386], [-0.5188334895054384, -0.28933726579547664], [-0.4558968084821345, 0.1724257460599513], [-0.6253833274124567, 0.11426554771014927], [-0.4875753970700444, -0.43146200579210414], [-0.45915981141841666, 0.3162512924181886], [-0.5345280263445213, -0.03448502804663671], [-0.2489944741510287, 0.6230064762860295], [0.2948913176758857, -0.4605532211144852], [-0.4999633758227514, 0.16421468481946044], [-0.5728008963448096, -0.4738778788693827], [-0.679308839790906, 0.2834652830877193], [-0.5896804115447709, 0.3985368821185311], [-0.5845970966254849, -0.3181053151751355], [-0.582421220637886, -0.16112184902639817], [-0.3020248587132722, 0.23836297820050867], [-0.40862033909041096, -0.14844168949369024], [-0.4635519946901929, 0.4915688219413927], [0.20080326699934278, 0.6582542661137715], [-0.32044668778937657, 0.1560811524939616], [-0.5260081755225425, 0.31896803069077684], [-0.522139262972577, -0.19853612960136655], [-0.6620647108117742, -0.2756736657681252], [-0.24740056388652143, -0.2778275552765745], [-0.37861814461326887, 0.17321960187460916], [-0.5886445349400931, 0.3647714661230235], [-0.46844375549657274, -0.35007210973842146], [-0.6766548027088335, 0.006524113037980912], [-0.5646958818414959, 0.07945798118438446], [-0.132281263684373, 0.5971800333415126], [-0.09707372384018248, -0.6553182785978395], [-0.5847115618742105, -0.23357063973622844], [-0.4662406147496264, 0.017610436090235212], [-0.6832837515813383, -0.19982145436911766], [-0.08093240859552699, 0.08921226083400934], [-0.37303317626593835, -0.2613330730342411], [-0.28016382507591514, -0.33993305034556376], [-0.4163055347021442, -0.3472396419215392], [-0.45542905472626366, 0.352592845084796], [-0.6394627729441276, -0.07229493989974131], [-0.6075151777364647, -0.3481411894094403], [-0.3510107438988955, 0.400652527248105], [-0.7007436528058821, -0.182044493454725], [-0.1986582599675444, -0.49728105939325656], [-0.08095903416516892, -0.8037962490058781], [-0.5136843972770234, -0.10990186112797501], [-0.12242000353868211, 0.7232331780873192], [0.11755133472569944, -0.6480193460769791], [-0.43304347678858046, -0.053748024452214896], [-0.5303680661524053, -0.3647362007503101], [-0.7008096861315433, 0.2525152772280063], [0.6144850850314945, -0.19169455736436888], [-0.6356190893362695, 0.23110078188823957], [-0.5617489435682929, 0.19055413818027336], [-0.3450665171224377, -0.5709654110812014], [-0.7383208936676712, 0.12695693520611437], [-0.31925513456931154, -0.09792668566308325], [0.13248750832631725, -0.5767208350279723], [-0.6030126251654321, -0.08750527171841406], [-0.13921598539613828, -0.26632406372245576], [-0.40854434977239334, 0.08297349389149859], [-0.6043073793174866, 0.30970190306535583], [-0.5286698393884313, 0.37867872260157176]], "data02": [[-0.6537245689382807, -0.002461102490244795], [-0.1941760574234527, 0.027659485029171944], [-0.3515390065715282, -0.3678377612543948], [0.13624692246602108, 0.674792478824929], [0.016066110750381356, 0.6870576766010891], [-0.07056481327717157, 0.5260129697458258], [-0.23071085737897382, 0.44630129712211114], [-0.7229106104295686, 0.11474230848922667], [-0.22673024659758237, 0.5828755483396111], [-0.11899966361144078, -0.04017295985363452], [-0.24222138512506222, 0.6677459099367615], [0.1800320577093273, 0.40265606978611995], [0.6294058390389103, -0.3601150665216822], [-0.11077171258629849, 0.3416907207558228], [0.4639535118159331, 0.3620606114395808], [0.13045627326199494, -0.43476616039603033], [-0.12270210475000448, -0.3920573178056023], [0.03308453148296907, 0.5613986750820023], [0.08444787831112147, 0.7028858441031745], [0.46700557396108544, 0.39693016816335996], [-0.02936740563818377, 0.6520919204394517], [-0.604541476120448, 0.0654054551074679], [-0.3229331215766018, 0.6175015476227409], [0.02638064772986, 0.5239167000745235], [-0.10863984335229883, -0.45152820363622376], [0.05985364921720446, -0.5633191035385583], [0.6406137829777395, 0.4132871979289975], [-0.1832601961812146, 0.20951781298954705], [0.2752087222168113, 0.46192509780103963], [0.1074019697670972, 0.6224263381115568], [0.3194965275816657, -0.2998009506023565], [0.7276531164860557, -0.0820226181843672], [0.21289057242504367, 0.6741637192737113], [-0.43507884072541, -0.5532911030550246], [0.6570585485944359, 0.23037246045567353], [0.5797444191055694, 0.05292974496358034], [0.15840032765111678, 0.6383664178905559], [0.08451974909112726, -0.570912023224527], [0.11265935481491086, 0.4072612189486295], [-0.008315643934161565, -0.7046344453425473], [-0.287075280591097, -0.6160490515133901], [0.3235283333853176, -0.517066023461018], [0.27700148826340065, 0.5678033793380416], [0.5044445899669963, 0.12521368862645899], [-0.22137833578244426, -0.4607061130092797], [-0.18663746733683814, 0.28359625391936016], [0.22647995434271212, 0.46703280021916505], [-0.03708829452799086, -0.5995857146254947], [-0.2662038367358288, -0.5608822281705189], [0.46486538381359355, 0.5579112448938882], [0.06093903041873105, -0.6848108902328177], [0.4049110733039674, 0.3436561731063374], [0.5263669845496148, 0.4663128692154488], [-0.38206205704040264, 0.5717012864850368], [0.5251279307489655, -0.0031045893960970337], [0.00847192575720885, 0.6237453130132867], [0.13517147521665826, 0.5188704927187314], [0.08665487575981146, 0.3635524561611177], [-0.11654769306564605, 0.41609856830558223]], "data03": [[0.43561294362270286, -0.42622203720090546], [0.302683443522418, 0.3231678978500281], [-0.3601268364495356, 0.48686094694568327], [0.0930714731088605, -0.0135324757180519], [-0.24642415513645435, -0.026998237097103254], [-0.0072532607246351775, 0.3257613856394769], [-0.3702819995588843, -0.30546025238676333], [0.39648277452354874, 0.22204886093413523], [0.36741245347475043, 0.07449699330832034], [0.376004409663208, -0.40708889473879245], [-0.1623309277909849, -0.1986443475837897], [0.348453187792045, -0.028573218406763672], [0.6449967397435089, -0.029151264572962104], [0.5707139166032127, 0.2914176092494979], [0.2429221874191626, 0.20336639813285792], [0.4554338408173914, -0.29257940135214566], [0.01608839621842432, 0.4126545242427058], [0.15919087280404648, -0.28278121376138693], [0.22447166671256524, -0.13862176721987943], [0.5015148425021271, -0.4941716773298186], [-0.30053993115915856, 0.04655399200908736], [-0.44476199579786385, -0.482821222117087], [0.5609391210616081, -0.27395760959504406], [0.2927230857482988, 0.06846442536258365], [0.009121560065749757, -0.03574414068154368], [0.7076167331048148, 0.15804835641255988], [0.4184057789660876, -0.3478951851046789], [-0.25461124311955846, 0.48777013473815034], [0.43644139767657575, -0.06158194020657133], [0.5247607187226678, -0.31232120584653633], [-0.32576858831366956, -0.5215342559095942], [-0.17480165592734445, 0.03743982213101337], [0.31418608305327994, 0.636097238045646], [0.05456332120338336, -0.07886445386923051], [0.1664932521744032, 0.2323336567701002], [0.0594582141036297, -0.5163925823126523], [0.30399267563777954, -0.1993341393809047], [0.32564239855999805, -0.23430910860646872], [0.5568343194582541, -0.19587109971844552], [-0.11840439731512942, 0.22079654289936973], [-0.322049656945219, 0.5587857158757145], [0.1517041642694869, -0.06707134366299679], [-0.3917736518444805, 0.3778823551697903], [0.4309126479807576, 0.0592568235262007], [0.19284978938564212, 0.48480966884077004], [0.07899654903670819, -0.7249786394534489], [0.4482852084300742, -0.18377162733625815], [0.015207886907493966, -0.25991105457015584], [0.5069870820651401, -0.12866927092967836], [0.6698873348961378, 0.10415934121053533], [0.3228896506443525, -0.127070049402344], [0.6612645601763139, 0.06889660756730272], [0.3199993497107582, -0.6498578354506627], [-0.0582454297996491, -0.08719422140797875], [0.634604657024271, 0.19338620982236687], [0.07379097889606752, -0.3416922016885522], [0.6305413903350028, 0.2570690774870777], [-0.19965435288326175, 0.2712277646651572], [-0.4324728489147029, 0.6025267959585737], [0.4120006706527862, 0.12055355125655114], [-0.0205449638487205, 0.14686966380847233], [0.17337612219032877, -0.34532055823726104], [-0.05483950085289387, -0.49862916041030836], [0.5553336477513169, -0.4069195152801631], [0.4274189978636454, 0.26341598941481353], [0.652406699195761, -0.10060515195548426], [0.3094636569289276, 0.5183681415935474], [-0.04687980191783493, 0.461708309864195], [0.7011359887447336, 0.37145038961244636], [0.5139206594052576, 0.4029033449601497], [0.6521575427826362, -0.26813904650298587], [0.34287849407035254, 0.45502381752855786], [-0.06820488287192741, -0.7513715474644518], [0.5898237236734264, -0.2259418962630081], [-0.2997391742314309, 0.7070768488176712], [0.2804332488159988, -0.3392578002933499], [0.27373960397011715, -0.39469732932547125], [-0.15683913630147692, 0.47360398063606757], [-0.20208942199249985, -0.6810392936481978], [0.45220099837354766, 0.4898032577256701], [0.1549906735349249, 0.13971513028634516], [0.23330517189615133, -0.5317686116671857], [0.12834533301907075, -0.13838748864793557], [0.23333390175914634, 0.25231508046035034], [-0.2464228000535697, -0.1288754635840718], [0.40980083950702995, -0.5271257118962174], [0.05801875118096011, -0.40643632830952653], [0.414032648676084, 0.5615891430226881], [-0.08825214820044888, -0.0019435122024923286], [0.3017942949109153, -0.08292053041595566], [0.021232528312397386, 0.07977219760206822], [0.1567069556863092, 0.031903488381262654], [0.037557473427884326, 0.23715735767436488], [0.1784561101787797, -0.2303798418278317], [0.561974165773996, 0.24715966755652916], [-0.18083102792521677, -0.3906965162534536], [0.057417819792931084, -0.24808771670258778], [-0.3444202485991031, -0.6620915185863032], [0.2969698926965767, -0.5786265527993438], [0.3818141750927363, -0.5793796246068912], [0.38321953202028375, -0.2953952881578916], [-0.0670437508023446, -0.16460693758689818], [-0.04204737587954856, -0.4296201693230541], [-0.40954575452686515, -0.5058867540393412], [-0.7258351017849141, -0.05264533083273849], [-0.3501929727789142, -0.23872862735841385], [0.23450812912536076, -0.4462047104484081], [0.34589690574052684, -0.5973862115073618], [0.6717553242969805, 0.03808267288886664], [0.3378248891631469, 0.2572255726449864], [0.6146519519273449, -0.15648964489583442], [-0.05161050230004354, -0.3400940907300813], [-0.13667920075233783, -0.6343566482061808], [0.4648886122424526, 0.1746272546262916], [-0.1475809771525249, 0.7218554465488574], [0.21754028387185043, 0.031142858121951937], [0.24447765089914394, -0.6376532874336955], [0.2254987256029029, 0.15586061164922907], [0.4170996704312716, -0.002613235095284559], [0.5768030645186389, -0.3439778723747201], [0.35390889221809285, -0.4820214678182252], [0.5796922679470521, 0.06984155981585198], [0.5509445640515805, -0.08177727845521886], [-0.16638633941191738, -0.562755652310454], [0.4100322689136991, 0.49785972582218163]], "data04": [[0.8379096262160779, 0.958609271523179, 0.9126195732155998, 0.8666298749080207]], "data05": [[0.8225486431131593, 0.8375030659798872], [0.9910394265232977, 0.8375030659798872], [0.9935995903737841, 0.8375030659798872], [0.9935995903737841, 0.8436350257542311], [0.9935995903737841, 0.9785381407897964], [0.9935995903737841, 0.9846701005641403], [0.9910394265232977, 0.9846701005641403], [0.8225486431131593, 0.9846701005641403], [0.8199884792626729, 0.9846701005641403], [0.8199884792626729, 0.9785381407897964], [0.8199884792626729, 0.8436350257542311], [0.8199884792626729, 0.8375030659798872], [0.8225486431131593, 0.8375030659798872]]}, "id": "el101443057319137912", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}, {"type": "htmltooltip", "id": "el101443057332929088pts", "labels": ["The Dark Knight\n", "The Lord of the Rings: The Return of the King\n", "Schindler's List\n", "The Lord of the Rings: The Fellowship of the Ring\n", "Star Wars: Episode V - The Empire Strikes Back\n", "The Matrix\n", "The Lord of the Rings: The Two Towers\n", "Seven Samurai\n", "Interstellar\n", "Star Wars: Episode IV - A New Hope\n", "Saving Private Ryan\n", "Gladiator\n", "Raiders of the Lost Ark\n", "Alien\n", "Apocalypse Now\n", "Terminator 2\n", "The Pianist\n", "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb\n", "Casablanca\n", "The Great Dictator\n", "The Dark Knight Rises\n", "Aliens\n", "WALL\u00c2\u00b7E\n", "Princess Mononoke\n", "Das Boot\n", "Paths of Glory\n", "Scarface\n", "Inglourious Basterds\n", "2001: A Space Odyssey\n", "Full Metal Jacket\n", "Lawrence of Arabia\n", "Star Wars: Episode VI - Return of the Jedi\n", "Indiana Jones and the Last Crusade\n", "Monty Python and the Holy Grail\n", "Judgment at Nuremberg\n", "Hacksaw Ridge\n", "Blade Runner\n", "Pan's Labyrinth\n", "Gone with the Wind\n", "V for Vendetta\n", "The Deer Hunter\n", "Downfall\n", "The Bridge on the River Kwai\n", "The Great Escape\n", "The Elephant Man\n", "Come and See\n", "PK\n", "The Passion of Joan of Arc\n", "The General\n", "Blade Runner 2049\n", "Logan\n", "Mad Max: Fury Road\n", "Jurassic Park\n", "Harry Potter and the Deathly Hallows: Part 2\n", "Monsters, Inc.\n", "The Thing\n", "Platoon\n", "Stalker\n", "Akira\n", "Gandhi\n", "Hotel Rwanda\n", "Nausica\u00c3\u00a4 of the Valley of the Wind\n", "The Best Years of Our Lives\n", "The Battle of Algiers\n", "The Terminator\n", "Twelve Monkeys\n"], "hoffset": 10, "voffset": 10}, {"type": "toptoolbar"}, {"type": "htmltooltip", "id": "el101443055928188544pts", "labels": ["The Shawshank Redemption\n", "Pulp Fiction\n", "The Good, the Bad and the Ugly\n", "12 Angry Men\n", "Se7en\n", "The Silence of the Lambs\n", "The Usual Suspects\n", "The Green Mile\n", "The Departed\n", "The Prestige\n", "American History X\n", "Memento\n", "The Intouchables\n", "Once Upon a Time in the West\n", "Rear Window\n", "Django Unchained\n", "Oldboy\n", "North by Northwest\n", "M\n", "Witness for the Prosecution\n", "L.A. Confidential\n", "A Clockwork Orange\n", "Reservoir Dogs\n", "Amadeus\n", "Some Like It Hot\n", "Vertigo\n", "For a Few Dollars More\n", "The Sting\n", "Double Indemnity\n", "Rashomon\n", "Bicycle Thieves\n", "Yojimbo\n", "Three Billboards Outside Ebbing, Missouri\n", "Die Hard\n", "The Secret in Their Eyes\n", "Chinatown\n", "On the Waterfront\n", "The Third Man\n", "Dial M for Murder\n", "A Wednesday\n", "The Wages of Fear\n", "Sunrise\n", "Gone Girl\n", "Prisoners\n", "No Country for Old Men\n", "Kill Bill: Vol. 1\n", "Fargo\n", "Spotlight\n", "The Big Lebowski\n", "The Sixth Sense\n", "Shutter Island\n", "Wild Tales\n", "Memories of Murder\n", "Infernal Affairs\n", "La Haine\n", "The Maltese Falcon\n", "Touch of Evil\n", "Diabolique\n", "Jaws\n"], "hoffset": 10, "voffset": 10}, {"type": "toptoolbar"}, {"type": "htmltooltip", "id": "el101443057332301272pts", "labels": ["The Godfather\n", "The Godfather: Part II\n", "Inception\n", "Forrest Gump\n", "Fight Club\n", "Goodfellas\n", "One Flew Over the Cuckoo's Nest\n", "L\u00c3\u00a9on: The Professional\n", "Spirited Away\n", "Life Is Beautiful\n", "City of God\n", "It's a Wonderful Life\n", "City Lights\n", "Coco\n", "The Lion King\n", "Back to the Future\n", "Whiplash\n", "Psycho\n", "Sunset Boulevard\n", "Dangal\n", "Grave of the Fireflies\n", "The Lives of Others\n", "Cinema Paradiso\n", "Like Stars on Earth\n", "Modern Times\n", "My Father and My Son\n", "The Shining\n", "Braveheart\n", "American Beauty\n", "Your Name\n", "Once Upon a Time in America\n", "Citizen Kane\n", "3 Idiots\n", "The Bandit\n", "Toy Story\n", "Requiem for a Dream\n", "Taxi Driver\n", "Eternal Sunshine of the Spotless Mind\n", "Up\n", "Batman Begins\n", "Snatch\n", "Good Will Hunting\n", "Toy Story 3\n", "Am\u00c3\u00a9lie\n", "To Kill a Mockingbird\n", "The Hunt\n", "Singin' in the Rain\n", "Metropolis\n", "A Separation\n", "The Apartment\n", "All About Eve\n", "Children of Heaven\n", "The Treasure of the Sierra Madre\n", "Rang De Basanti\n", "The Kid\n", "Ikiru\n", "Sherlock Jr.\n", "Heat\n", "The Wolf of Wall Street\n", "Inside Out\n", "Room\n", "Casino\n", "A Beautiful Mind\n", "Trainspotting\n", "Warrior\n", "Howl's Moving Castle\n", "Unforgiven\n", "Lock, Stock and Two Smoking Barrels\n", "My Neighbor Totoro\n", "Incendies\n", "Raging Bull\n", "The Seventh Seal\n", "Ran\n", "Rebecca\n", "Andrei Rublev\n", "Wild Strawberries\n", "Tokyo Story\n", "Mr. Smith Goes to Washington\n", "Gangs of Wasseypur\n", "The Gold Rush\n", "The Princess Bride\n", "La La Land\n", "The Grand Budapest Hotel\n", "Stand by Me\n", "Donnie Darko\n", "Finding Nemo\n", "There Will Be Blood\n", "Catch Me If You Can\n", "Into the Wild\n", "The Help\n", "12 Years a Slave\n", "The Truman Show\n", "How to Train Your Dragon\n", "Ben-Hur\n", "Dead Poets Society\n", "Gran Torino\n", "Rocky\n", "Rush\n", "Million Dollar Baby\n", "Before Sunrise\n", "Hachi: A Dog's Tale\n", "Barry Lyndon\n", "Network\n", "Butch Cassidy and the Sundance Kid\n", "Cool Hand Luke\n", "Life of Brian\n", "In the Mood for Love\n", "Before Sunset\n", "In the Name of the Father\n", "Paris, Texas\n", "8\u00c2\u00bd\n", "Amores Perros\n", "Persona\n", "Mary and Max\n", "Three Colors: Red\n", "Paper Moon\n", "The Grapes of Wrath\n", "The 400 Blows\n", "It Happened One Night\n", "The Nights of Cabiria\n", "The Wizard of Oz\n", "Beauty and the Beast\n", "The Bourne Ultimatum\n", "Groundhog Day\n", "Annie Hall"], "hoffset": 10, "voffset": 10}, {"type": "toptoolbar"}]});
+      });
+    });
+}else{
+    // require.js not available: dynamically load d3 & mpld3
+    mpld3_load_lib("https://mpld3.github.io/js/d3.v3.min.js", function(){
+         mpld3_load_lib("https://mpld3.github.io/js/mpld3.v0.3.js", function(){
+                 
+    mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+    HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+    HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+    HtmlTooltipPlugin.prototype.defaultProps = {labels:null,
+                                                hoffset:0,
+                                                voffset:10};
+    function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    HtmlTooltipPlugin.prototype.draw = function(){
+       var obj = mpld3.get_element(this.props.id);
+       var labels = this.props.labels;
+       var tooltip = d3.select("body").append("div")
+                    .attr("class", "mpld3-tooltip")
+                    .style("position", "absolute")
+                    .style("z-index", "10")
+                    .style("visibility", "hidden");
+
+       obj.elements()
+           .on("mouseover", function(d, i){
+                              tooltip.html(labels[i])
+                                     .style("visibility", "visible");})
+           .on("mousemove", function(d, i){
+                  tooltip
+                    .style("top", d3.event.pageY + this.props.voffset + "px")
+                    .style("left",d3.event.pageX + this.props.hoffset + "px");
+                 }.bind(this))
+           .on("mouseout",  function(d, i){
+                           tooltip.style("visibility", "hidden");});
+    };
+    
+    mpld3.register_plugin("toptoolbar", TopToolbar);
+    TopToolbar.prototype = Object.create(mpld3.Plugin.prototype);
+    TopToolbar.prototype.constructor = TopToolbar;
+    function TopToolbar(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    TopToolbar.prototype.draw = function(){
+      // the toolbar svg doesn't exist
+      // yet, so first draw it
+      this.fig.toolbar.draw();
+
+      // then change the y position to be
+      // at the top of the figure
+      this.fig.toolbar.toolbar.attr("x", 150);
+      this.fig.toolbar.toolbar.attr("y", 400);
+
+      // then remove the draw function,
+      // so that it is not called again
+      this.fig.toolbar.draw = function() {}
+    }
+    
+    mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+    HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+    HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+    HtmlTooltipPlugin.prototype.defaultProps = {labels:null,
+                                                hoffset:0,
+                                                voffset:10};
+    function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    HtmlTooltipPlugin.prototype.draw = function(){
+       var obj = mpld3.get_element(this.props.id);
+       var labels = this.props.labels;
+       var tooltip = d3.select("body").append("div")
+                    .attr("class", "mpld3-tooltip")
+                    .style("position", "absolute")
+                    .style("z-index", "10")
+                    .style("visibility", "hidden");
+
+       obj.elements()
+           .on("mouseover", function(d, i){
+                              tooltip.html(labels[i])
+                                     .style("visibility", "visible");})
+           .on("mousemove", function(d, i){
+                  tooltip
+                    .style("top", d3.event.pageY + this.props.voffset + "px")
+                    .style("left",d3.event.pageX + this.props.hoffset + "px");
+                 }.bind(this))
+           .on("mouseout",  function(d, i){
+                           tooltip.style("visibility", "hidden");});
+    };
+    
+    mpld3.register_plugin("toptoolbar", TopToolbar);
+    TopToolbar.prototype = Object.create(mpld3.Plugin.prototype);
+    TopToolbar.prototype.constructor = TopToolbar;
+    function TopToolbar(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    TopToolbar.prototype.draw = function(){
+      // the toolbar svg doesn't exist
+      // yet, so first draw it
+      this.fig.toolbar.draw();
+
+      // then change the y position to be
+      // at the top of the figure
+      this.fig.toolbar.toolbar.attr("x", 150);
+      this.fig.toolbar.toolbar.attr("y", 400);
+
+      // then remove the draw function,
+      // so that it is not called again
+      this.fig.toolbar.draw = function() {}
+    }
+    
+    mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+    HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+    HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+    HtmlTooltipPlugin.prototype.defaultProps = {labels:null,
+                                                hoffset:0,
+                                                voffset:10};
+    function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    HtmlTooltipPlugin.prototype.draw = function(){
+       var obj = mpld3.get_element(this.props.id);
+       var labels = this.props.labels;
+       var tooltip = d3.select("body").append("div")
+                    .attr("class", "mpld3-tooltip")
+                    .style("position", "absolute")
+                    .style("z-index", "10")
+                    .style("visibility", "hidden");
+
+       obj.elements()
+           .on("mouseover", function(d, i){
+                              tooltip.html(labels[i])
+                                     .style("visibility", "visible");})
+           .on("mousemove", function(d, i){
+                  tooltip
+                    .style("top", d3.event.pageY + this.props.voffset + "px")
+                    .style("left",d3.event.pageX + this.props.hoffset + "px");
+                 }.bind(this))
+           .on("mouseout",  function(d, i){
+                           tooltip.style("visibility", "hidden");});
+    };
+    
+    mpld3.register_plugin("toptoolbar", TopToolbar);
+    TopToolbar.prototype = Object.create(mpld3.Plugin.prototype);
+    TopToolbar.prototype.constructor = TopToolbar;
+    function TopToolbar(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    TopToolbar.prototype.draw = function(){
+      // the toolbar svg doesn't exist
+      // yet, so first draw it
+      this.fig.toolbar.draw();
+
+      // then change the y position to be
+      // at the top of the figure
+      this.fig.toolbar.toolbar.attr("x", 150);
+      this.fig.toolbar.toolbar.attr("y", 400);
+
+      // then remove the draw function,
+      // so that it is not called again
+      this.fig.toolbar.draw = function() {}
+    }
+    
+                 mpld3.draw_figure("fig_el1014430573191379129551488370", {"width": 1008.0, "height": 432.0, "axes": [{"bbox": [0.125, 0.125, 0.775, 0.755], "xlim": [-0.7823001139722829, 0.7716323367906675], "ylim": [-0.849607131818674, 0.7690440609001151], "xdomain": [-0.7823001139722829, 0.7716323367906675], "ydomain": [-0.849607131818674, 0.7690440609001151], "xscale": "linear", "yscale": "linear", "axes": [{"position": "bottom", "nticks": 0, "tickvalues": [], "tickformat": "", "scale": "linear", "fontsize": null, "grid": {"gridOn": false}, "visible": false}, {"position": "left", "nticks": 0, "tickvalues": [], "tickformat": "", "scale": "linear", "fontsize": null, "grid": {"gridOn": false}, "visible": false}], "axesbg": "#FFFFFF", "axesbgalpha": null, "zoomable": true, "id": "el101443057418392184", "lines": [], "paths": [{"data": "data05", "xindex": 0, "yindex": 1, "coordinates": "axes", "pathcodes": ["M", "L", "S", "L", "S", "L", "S", "L", "S", "Z"], "id": "el101443057332301104", "dasharray": "none", "alpha": 0.8, "facecolor": "#FFFFFF", "edgecolor": "#CCCCCC", "edgewidth": 1.0, "zorder": 1000000.0}], "markers": [{"data": "data01", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el101443057332929088pts", "facecolor": "#1B9E77", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 2, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data02", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el101443055928188544pts", "facecolor": "#D95F02", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 2, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data03", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el101443057332301272pts", "facecolor": "#7570B3", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 2, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data04", "xindex": 0, "yindex": 1, "coordinates": "axes", "id": "el101443057529836040pts", "facecolor": "#1B9E77", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 1000002.0, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data04", "xindex": 0, "yindex": 2, "coordinates": "axes", "id": "el101443057333994608pts", "facecolor": "#D95F02", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 1000002.0, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}, {"data": "data04", "xindex": 0, "yindex": 3, "coordinates": "axes", "id": "el101443057529838560pts", "facecolor": "#7570B3", "edgecolor": "none", "edgewidth": 1.0, "alpha": 1, "zorder": 1000002.0, "markerpath": [[[0.0, 9.0], [2.3868279, 9.0], [4.676218837063681, 8.051703224294176], [6.3639610306789285, 6.3639610306789285], [8.051703224294176, 4.676218837063681], [9.0, 2.3868279], [9.0, 0.0], [9.0, -2.3868279], [8.051703224294176, -4.676218837063681], [6.3639610306789285, -6.3639610306789285], [4.676218837063681, -8.051703224294176], [2.3868279, -9.0], [0.0, -9.0], [-2.3868279, -9.0], [-4.676218837063681, -8.051703224294176], [-6.3639610306789285, -6.3639610306789285], [-8.051703224294176, -4.676218837063681], [-9.0, -2.3868279], [-9.0, 0.0], [-9.0, 2.3868279], [-8.051703224294176, 4.676218837063681], [-6.3639610306789285, 6.3639610306789285], [-4.676218837063681, 8.051703224294176], [-2.3868279, 9.0], [0.0, 9.0]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}], "texts": [{"text": "war, humans, world", "position": [0.8609511008704559, 0.9478783419180772], "coordinates": "axes", "h_anchor": "start", "v_baseline": "auto", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 1000003.0, "id": "el101443057333997464"}, {"text": "murder, wife, police", "position": [0.8609511008704559, 0.901888643610498], "coordinates": "axes", "h_anchor": "start", "v_baseline": "auto", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 1000003.0, "id": "el101443057529837048"}, {"text": "life, friends, family", "position": [0.8609511008704559, 0.8558989453029189], "coordinates": "axes", "h_anchor": "start", "v_baseline": "auto", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 1000003.0, "id": "el101443057529838056"}], "collections": [], "images": [], "sharex": [], "sharey": []}], "data": {"data01": [[-0.311108365927303, 0.3555187576061868], [-0.5914865716098634, 0.1385511117646962], [-0.6178420337493936, -0.1971477510091187], [-0.571246888917026, 0.46756226082499386], [-0.5188334895054384, -0.28933726579547664], [-0.4558968084821345, 0.1724257460599513], [-0.6253833274124567, 0.11426554771014927], [-0.4875753970700444, -0.43146200579210414], [-0.45915981141841666, 0.3162512924181886], [-0.5345280263445213, -0.03448502804663671], [-0.2489944741510287, 0.6230064762860295], [0.2948913176758857, -0.4605532211144852], [-0.4999633758227514, 0.16421468481946044], [-0.5728008963448096, -0.4738778788693827], [-0.679308839790906, 0.2834652830877193], [-0.5896804115447709, 0.3985368821185311], [-0.5845970966254849, -0.3181053151751355], [-0.582421220637886, -0.16112184902639817], [-0.3020248587132722, 0.23836297820050867], [-0.40862033909041096, -0.14844168949369024], [-0.4635519946901929, 0.4915688219413927], [0.20080326699934278, 0.6582542661137715], [-0.32044668778937657, 0.1560811524939616], [-0.5260081755225425, 0.31896803069077684], [-0.522139262972577, -0.19853612960136655], [-0.6620647108117742, -0.2756736657681252], [-0.24740056388652143, -0.2778275552765745], [-0.37861814461326887, 0.17321960187460916], [-0.5886445349400931, 0.3647714661230235], [-0.46844375549657274, -0.35007210973842146], [-0.6766548027088335, 0.006524113037980912], [-0.5646958818414959, 0.07945798118438446], [-0.132281263684373, 0.5971800333415126], [-0.09707372384018248, -0.6553182785978395], [-0.5847115618742105, -0.23357063973622844], [-0.4662406147496264, 0.017610436090235212], [-0.6832837515813383, -0.19982145436911766], [-0.08093240859552699, 0.08921226083400934], [-0.37303317626593835, -0.2613330730342411], [-0.28016382507591514, -0.33993305034556376], [-0.4163055347021442, -0.3472396419215392], [-0.45542905472626366, 0.352592845084796], [-0.6394627729441276, -0.07229493989974131], [-0.6075151777364647, -0.3481411894094403], [-0.3510107438988955, 0.400652527248105], [-0.7007436528058821, -0.182044493454725], [-0.1986582599675444, -0.49728105939325656], [-0.08095903416516892, -0.8037962490058781], [-0.5136843972770234, -0.10990186112797501], [-0.12242000353868211, 0.7232331780873192], [0.11755133472569944, -0.6480193460769791], [-0.43304347678858046, -0.053748024452214896], [-0.5303680661524053, -0.3647362007503101], [-0.7008096861315433, 0.2525152772280063], [0.6144850850314945, -0.19169455736436888], [-0.6356190893362695, 0.23110078188823957], [-0.5617489435682929, 0.19055413818027336], [-0.3450665171224377, -0.5709654110812014], [-0.7383208936676712, 0.12695693520611437], [-0.31925513456931154, -0.09792668566308325], [0.13248750832631725, -0.5767208350279723], [-0.6030126251654321, -0.08750527171841406], [-0.13921598539613828, -0.26632406372245576], [-0.40854434977239334, 0.08297349389149859], [-0.6043073793174866, 0.30970190306535583], [-0.5286698393884313, 0.37867872260157176]], "data02": [[-0.6537245689382807, -0.002461102490244795], [-0.1941760574234527, 0.027659485029171944], [-0.3515390065715282, -0.3678377612543948], [0.13624692246602108, 0.674792478824929], [0.016066110750381356, 0.6870576766010891], [-0.07056481327717157, 0.5260129697458258], [-0.23071085737897382, 0.44630129712211114], [-0.7229106104295686, 0.11474230848922667], [-0.22673024659758237, 0.5828755483396111], [-0.11899966361144078, -0.04017295985363452], [-0.24222138512506222, 0.6677459099367615], [0.1800320577093273, 0.40265606978611995], [0.6294058390389103, -0.3601150665216822], [-0.11077171258629849, 0.3416907207558228], [0.4639535118159331, 0.3620606114395808], [0.13045627326199494, -0.43476616039603033], [-0.12270210475000448, -0.3920573178056023], [0.03308453148296907, 0.5613986750820023], [0.08444787831112147, 0.7028858441031745], [0.46700557396108544, 0.39693016816335996], [-0.02936740563818377, 0.6520919204394517], [-0.604541476120448, 0.0654054551074679], [-0.3229331215766018, 0.6175015476227409], [0.02638064772986, 0.5239167000745235], [-0.10863984335229883, -0.45152820363622376], [0.05985364921720446, -0.5633191035385583], [0.6406137829777395, 0.4132871979289975], [-0.1832601961812146, 0.20951781298954705], [0.2752087222168113, 0.46192509780103963], [0.1074019697670972, 0.6224263381115568], [0.3194965275816657, -0.2998009506023565], [0.7276531164860557, -0.0820226181843672], [0.21289057242504367, 0.6741637192737113], [-0.43507884072541, -0.5532911030550246], [0.6570585485944359, 0.23037246045567353], [0.5797444191055694, 0.05292974496358034], [0.15840032765111678, 0.6383664178905559], [0.08451974909112726, -0.570912023224527], [0.11265935481491086, 0.4072612189486295], [-0.008315643934161565, -0.7046344453425473], [-0.287075280591097, -0.6160490515133901], [0.3235283333853176, -0.517066023461018], [0.27700148826340065, 0.5678033793380416], [0.5044445899669963, 0.12521368862645899], [-0.22137833578244426, -0.4607061130092797], [-0.18663746733683814, 0.28359625391936016], [0.22647995434271212, 0.46703280021916505], [-0.03708829452799086, -0.5995857146254947], [-0.2662038367358288, -0.5608822281705189], [0.46486538381359355, 0.5579112448938882], [0.06093903041873105, -0.6848108902328177], [0.4049110733039674, 0.3436561731063374], [0.5263669845496148, 0.4663128692154488], [-0.38206205704040264, 0.5717012864850368], [0.5251279307489655, -0.0031045893960970337], [0.00847192575720885, 0.6237453130132867], [0.13517147521665826, 0.5188704927187314], [0.08665487575981146, 0.3635524561611177], [-0.11654769306564605, 0.41609856830558223]], "data03": [[0.43561294362270286, -0.42622203720090546], [0.302683443522418, 0.3231678978500281], [-0.3601268364495356, 0.48686094694568327], [0.0930714731088605, -0.0135324757180519], [-0.24642415513645435, -0.026998237097103254], [-0.0072532607246351775, 0.3257613856394769], [-0.3702819995588843, -0.30546025238676333], [0.39648277452354874, 0.22204886093413523], [0.36741245347475043, 0.07449699330832034], [0.376004409663208, -0.40708889473879245], [-0.1623309277909849, -0.1986443475837897], [0.348453187792045, -0.028573218406763672], [0.6449967397435089, -0.029151264572962104], [0.5707139166032127, 0.2914176092494979], [0.2429221874191626, 0.20336639813285792], [0.4554338408173914, -0.29257940135214566], [0.01608839621842432, 0.4126545242427058], [0.15919087280404648, -0.28278121376138693], [0.22447166671256524, -0.13862176721987943], [0.5015148425021271, -0.4941716773298186], [-0.30053993115915856, 0.04655399200908736], [-0.44476199579786385, -0.482821222117087], [0.5609391210616081, -0.27395760959504406], [0.2927230857482988, 0.06846442536258365], [0.009121560065749757, -0.03574414068154368], [0.7076167331048148, 0.15804835641255988], [0.4184057789660876, -0.3478951851046789], [-0.25461124311955846, 0.48777013473815034], [0.43644139767657575, -0.06158194020657133], [0.5247607187226678, -0.31232120584653633], [-0.32576858831366956, -0.5215342559095942], [-0.17480165592734445, 0.03743982213101337], [0.31418608305327994, 0.636097238045646], [0.05456332120338336, -0.07886445386923051], [0.1664932521744032, 0.2323336567701002], [0.0594582141036297, -0.5163925823126523], [0.30399267563777954, -0.1993341393809047], [0.32564239855999805, -0.23430910860646872], [0.5568343194582541, -0.19587109971844552], [-0.11840439731512942, 0.22079654289936973], [-0.322049656945219, 0.5587857158757145], [0.1517041642694869, -0.06707134366299679], [-0.3917736518444805, 0.3778823551697903], [0.4309126479807576, 0.0592568235262007], [0.19284978938564212, 0.48480966884077004], [0.07899654903670819, -0.7249786394534489], [0.4482852084300742, -0.18377162733625815], [0.015207886907493966, -0.25991105457015584], [0.5069870820651401, -0.12866927092967836], [0.6698873348961378, 0.10415934121053533], [0.3228896506443525, -0.127070049402344], [0.6612645601763139, 0.06889660756730272], [0.3199993497107582, -0.6498578354506627], [-0.0582454297996491, -0.08719422140797875], [0.634604657024271, 0.19338620982236687], [0.07379097889606752, -0.3416922016885522], [0.6305413903350028, 0.2570690774870777], [-0.19965435288326175, 0.2712277646651572], [-0.4324728489147029, 0.6025267959585737], [0.4120006706527862, 0.12055355125655114], [-0.0205449638487205, 0.14686966380847233], [0.17337612219032877, -0.34532055823726104], [-0.05483950085289387, -0.49862916041030836], [0.5553336477513169, -0.4069195152801631], [0.4274189978636454, 0.26341598941481353], [0.652406699195761, -0.10060515195548426], [0.3094636569289276, 0.5183681415935474], [-0.04687980191783493, 0.461708309864195], [0.7011359887447336, 0.37145038961244636], [0.5139206594052576, 0.4029033449601497], [0.6521575427826362, -0.26813904650298587], [0.34287849407035254, 0.45502381752855786], [-0.06820488287192741, -0.7513715474644518], [0.5898237236734264, -0.2259418962630081], [-0.2997391742314309, 0.7070768488176712], [0.2804332488159988, -0.3392578002933499], [0.27373960397011715, -0.39469732932547125], [-0.15683913630147692, 0.47360398063606757], [-0.20208942199249985, -0.6810392936481978], [0.45220099837354766, 0.4898032577256701], [0.1549906735349249, 0.13971513028634516], [0.23330517189615133, -0.5317686116671857], [0.12834533301907075, -0.13838748864793557], [0.23333390175914634, 0.25231508046035034], [-0.2464228000535697, -0.1288754635840718], [0.40980083950702995, -0.5271257118962174], [0.05801875118096011, -0.40643632830952653], [0.414032648676084, 0.5615891430226881], [-0.08825214820044888, -0.0019435122024923286], [0.3017942949109153, -0.08292053041595566], [0.021232528312397386, 0.07977219760206822], [0.1567069556863092, 0.031903488381262654], [0.037557473427884326, 0.23715735767436488], [0.1784561101787797, -0.2303798418278317], [0.561974165773996, 0.24715966755652916], [-0.18083102792521677, -0.3906965162534536], [0.057417819792931084, -0.24808771670258778], [-0.3444202485991031, -0.6620915185863032], [0.2969698926965767, -0.5786265527993438], [0.3818141750927363, -0.5793796246068912], [0.38321953202028375, -0.2953952881578916], [-0.0670437508023446, -0.16460693758689818], [-0.04204737587954856, -0.4296201693230541], [-0.40954575452686515, -0.5058867540393412], [-0.7258351017849141, -0.05264533083273849], [-0.3501929727789142, -0.23872862735841385], [0.23450812912536076, -0.4462047104484081], [0.34589690574052684, -0.5973862115073618], [0.6717553242969805, 0.03808267288886664], [0.3378248891631469, 0.2572255726449864], [0.6146519519273449, -0.15648964489583442], [-0.05161050230004354, -0.3400940907300813], [-0.13667920075233783, -0.6343566482061808], [0.4648886122424526, 0.1746272546262916], [-0.1475809771525249, 0.7218554465488574], [0.21754028387185043, 0.031142858121951937], [0.24447765089914394, -0.6376532874336955], [0.2254987256029029, 0.15586061164922907], [0.4170996704312716, -0.002613235095284559], [0.5768030645186389, -0.3439778723747201], [0.35390889221809285, -0.4820214678182252], [0.5796922679470521, 0.06984155981585198], [0.5509445640515805, -0.08177727845521886], [-0.16638633941191738, -0.562755652310454], [0.4100322689136991, 0.49785972582218163]], "data04": [[0.8379096262160779, 0.958609271523179, 0.9126195732155998, 0.8666298749080207]], "data05": [[0.8225486431131593, 0.8375030659798872], [0.9910394265232977, 0.8375030659798872], [0.9935995903737841, 0.8375030659798872], [0.9935995903737841, 0.8436350257542311], [0.9935995903737841, 0.9785381407897964], [0.9935995903737841, 0.9846701005641403], [0.9910394265232977, 0.9846701005641403], [0.8225486431131593, 0.9846701005641403], [0.8199884792626729, 0.9846701005641403], [0.8199884792626729, 0.9785381407897964], [0.8199884792626729, 0.8436350257542311], [0.8199884792626729, 0.8375030659798872], [0.8225486431131593, 0.8375030659798872]]}, "id": "el101443057319137912", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}, {"type": "htmltooltip", "id": "el101443057332929088pts", "labels": ["The Dark Knight\n", "The Lord of the Rings: The Return of the King\n", "Schindler's List\n", "The Lord of the Rings: The Fellowship of the Ring\n", "Star Wars: Episode V - The Empire Strikes Back\n", "The Matrix\n", "The Lord of the Rings: The Two Towers\n", "Seven Samurai\n", "Interstellar\n", "Star Wars: Episode IV - A New Hope\n", "Saving Private Ryan\n", "Gladiator\n", "Raiders of the Lost Ark\n", "Alien\n", "Apocalypse Now\n", "Terminator 2\n", "The Pianist\n", "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb\n", "Casablanca\n", "The Great Dictator\n", "The Dark Knight Rises\n", "Aliens\n", "WALL\u00c2\u00b7E\n", "Princess Mononoke\n", "Das Boot\n", "Paths of Glory\n", "Scarface\n", "Inglourious Basterds\n", "2001: A Space Odyssey\n", "Full Metal Jacket\n", "Lawrence of Arabia\n", "Star Wars: Episode VI - Return of the Jedi\n", "Indiana Jones and the Last Crusade\n", "Monty Python and the Holy Grail\n", "Judgment at Nuremberg\n", "Hacksaw Ridge\n", "Blade Runner\n", "Pan's Labyrinth\n", "Gone with the Wind\n", "V for Vendetta\n", "The Deer Hunter\n", "Downfall\n", "The Bridge on the River Kwai\n", "The Great Escape\n", "The Elephant Man\n", "Come and See\n", "PK\n", "The Passion of Joan of Arc\n", "The General\n", "Blade Runner 2049\n", "Logan\n", "Mad Max: Fury Road\n", "Jurassic Park\n", "Harry Potter and the Deathly Hallows: Part 2\n", "Monsters, Inc.\n", "The Thing\n", "Platoon\n", "Stalker\n", "Akira\n", "Gandhi\n", "Hotel Rwanda\n", "Nausica\u00c3\u00a4 of the Valley of the Wind\n", "The Best Years of Our Lives\n", "The Battle of Algiers\n", "The Terminator\n", "Twelve Monkeys\n"], "hoffset": 10, "voffset": 10}, {"type": "toptoolbar"}, {"type": "htmltooltip", "id": "el101443055928188544pts", "labels": ["The Shawshank Redemption\n", "Pulp Fiction\n", "The Good, the Bad and the Ugly\n", "12 Angry Men\n", "Se7en\n", "The Silence of the Lambs\n", "The Usual Suspects\n", "The Green Mile\n", "The Departed\n", "The Prestige\n", "American History X\n", "Memento\n", "The Intouchables\n", "Once Upon a Time in the West\n", "Rear Window\n", "Django Unchained\n", "Oldboy\n", "North by Northwest\n", "M\n", "Witness for the Prosecution\n", "L.A. Confidential\n", "A Clockwork Orange\n", "Reservoir Dogs\n", "Amadeus\n", "Some Like It Hot\n", "Vertigo\n", "For a Few Dollars More\n", "The Sting\n", "Double Indemnity\n", "Rashomon\n", "Bicycle Thieves\n", "Yojimbo\n", "Three Billboards Outside Ebbing, Missouri\n", "Die Hard\n", "The Secret in Their Eyes\n", "Chinatown\n", "On the Waterfront\n", "The Third Man\n", "Dial M for Murder\n", "A Wednesday\n", "The Wages of Fear\n", "Sunrise\n", "Gone Girl\n", "Prisoners\n", "No Country for Old Men\n", "Kill Bill: Vol. 1\n", "Fargo\n", "Spotlight\n", "The Big Lebowski\n", "The Sixth Sense\n", "Shutter Island\n", "Wild Tales\n", "Memories of Murder\n", "Infernal Affairs\n", "La Haine\n", "The Maltese Falcon\n", "Touch of Evil\n", "Diabolique\n", "Jaws\n"], "hoffset": 10, "voffset": 10}, {"type": "toptoolbar"}, {"type": "htmltooltip", "id": "el101443057332301272pts", "labels": ["The Godfather\n", "The Godfather: Part II\n", "Inception\n", "Forrest Gump\n", "Fight Club\n", "Goodfellas\n", "One Flew Over the Cuckoo's Nest\n", "L\u00c3\u00a9on: The Professional\n", "Spirited Away\n", "Life Is Beautiful\n", "City of God\n", "It's a Wonderful Life\n", "City Lights\n", "Coco\n", "The Lion King\n", "Back to the Future\n", "Whiplash\n", "Psycho\n", "Sunset Boulevard\n", "Dangal\n", "Grave of the Fireflies\n", "The Lives of Others\n", "Cinema Paradiso\n", "Like Stars on Earth\n", "Modern Times\n", "My Father and My Son\n", "The Shining\n", "Braveheart\n", "American Beauty\n", "Your Name\n", "Once Upon a Time in America\n", "Citizen Kane\n", "3 Idiots\n", "The Bandit\n", "Toy Story\n", "Requiem for a Dream\n", "Taxi Driver\n", "Eternal Sunshine of the Spotless Mind\n", "Up\n", "Batman Begins\n", "Snatch\n", "Good Will Hunting\n", "Toy Story 3\n", "Am\u00c3\u00a9lie\n", "To Kill a Mockingbird\n", "The Hunt\n", "Singin' in the Rain\n", "Metropolis\n", "A Separation\n", "The Apartment\n", "All About Eve\n", "Children of Heaven\n", "The Treasure of the Sierra Madre\n", "Rang De Basanti\n", "The Kid\n", "Ikiru\n", "Sherlock Jr.\n", "Heat\n", "The Wolf of Wall Street\n", "Inside Out\n", "Room\n", "Casino\n", "A Beautiful Mind\n", "Trainspotting\n", "Warrior\n", "Howl's Moving Castle\n", "Unforgiven\n", "Lock, Stock and Two Smoking Barrels\n", "My Neighbor Totoro\n", "Incendies\n", "Raging Bull\n", "The Seventh Seal\n", "Ran\n", "Rebecca\n", "Andrei Rublev\n", "Wild Strawberries\n", "Tokyo Story\n", "Mr. Smith Goes to Washington\n", "Gangs of Wasseypur\n", "The Gold Rush\n", "The Princess Bride\n", "La La Land\n", "The Grand Budapest Hotel\n", "Stand by Me\n", "Donnie Darko\n", "Finding Nemo\n", "There Will Be Blood\n", "Catch Me If You Can\n", "Into the Wild\n", "The Help\n", "12 Years a Slave\n", "The Truman Show\n", "How to Train Your Dragon\n", "Ben-Hur\n", "Dead Poets Society\n", "Gran Torino\n", "Rocky\n", "Rush\n", "Million Dollar Baby\n", "Before Sunrise\n", "Hachi: A Dog's Tale\n", "Barry Lyndon\n", "Network\n", "Butch Cassidy and the Sundance Kid\n", "Cool Hand Luke\n", "Life of Brian\n", "In the Mood for Love\n", "Before Sunset\n", "In the Name of the Father\n", "Paris, Texas\n", "8\u00c2\u00bd\n", "Amores Perros\n", "Persona\n", "Mary and Max\n", "Three Colors: Red\n", "Paper Moon\n", "The Grapes of Wrath\n", "The 400 Blows\n", "It Happened One Night\n", "The Nights of Cabiria\n", "The Wizard of Oz\n", "Beauty and the Beast\n", "The Bourne Ultimatum\n", "Groundhog Day\n", "Annie Hall"], "hoffset": 10, "voffset": 10}, {"type": "toptoolbar"}]});
+            })
+         });
+}
+</script>
